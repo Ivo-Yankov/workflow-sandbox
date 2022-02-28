@@ -22,7 +22,7 @@ jobs:
 
       - name: Checkout repository
         uses: actions/checkout@v2
-        run: git checkout some-branch
+        run: git checkout master
 
       - name: Install dependencies (and link per package)
         run: npm install
