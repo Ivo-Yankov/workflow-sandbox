@@ -1,0 +1,30 @@
+name: Publish CI
+
+on:
+  release:
+
+jobs:
+
+  test-node:
+
+    runs-on: macos-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [ 13.x ]
+
+    steps:
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install dependencies (and link per package)
+        run: npm install
+
+      - name: Run tests
+        run: npm run publish-script

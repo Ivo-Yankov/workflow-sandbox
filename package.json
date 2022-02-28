@@ -1,0 +1,20 @@
+{
+  "name": "workflow-test-repo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "publish-script": "echo \"Publishing Wooo Hooo\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ivo-Yankov/workflow-test-repo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ivo-Yankov/workflow-test-repo/issues"
+  },
+  "homepage": "https://github.com/Ivo-Yankov/workflow-test-repo#readme"
+}
