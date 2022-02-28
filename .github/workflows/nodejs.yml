@@ -45,13 +45,5 @@ jobs:
           # Default: ignore
           pathspec_error_handling: ignore
 
-          # Arguments for the git pull command. By default, the action does not pull.
-          # Default: ''
-          pull: '--rebase --autostash ...'
-
-          # Arguments for the git tag command (the tag name always needs to be the first word not preceded by an hyphen)
-          # Default: ''
-          tag: 'v1.0.0 --force'
-
       - name: Publish
         run: npm run publish-script
