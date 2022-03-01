@@ -6,6 +6,9 @@ const path = require('path');
 (async function () {
     let version = fs.readFileSync(path.resolve(__dirname, 'version.txt'), 'utf8')
 
+
+    console.log(`Version: ${version}`);
+
     const json = {
         "name": "ivo-totally-different-package",
         "version": version,
