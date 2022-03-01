@@ -1,4 +1,4 @@
-import {publish} from "libnpmpublish";
+const {publish} = require("libnpmpublish");
 const pacote = require('pacote') // see: http://npm.im/pacote
 const path = require('path');
 
