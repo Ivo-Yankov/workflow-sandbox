@@ -1,2 +1,2 @@
 console.log("Publishing Wooo Hooo");
-console.log(process);
+console.log(process.env);
