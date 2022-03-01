@@ -1,13 +1,14 @@
 const {publish} = require("libnpmpublish");
+const fs = require('fs');
+const path = require('path');
 
 
 (async function () {
-
-    console.log(process.argv);
+    let version = fs.readFileSync(path.resolve(__dirname, 'version.txt'), 'utf8')
 
     const json = {
         "name": "ivo-totally-different-package",
-        "version": "0.0.1",
+        "version": version,
         "description": "",
         "main": "index.js",
         "scripts": {
@@ -18,10 +19,8 @@ const {publish} = require("libnpmpublish");
     };
 
     const options = {
-        // access: "public",
         tag: 'latest',
-        npmVersion: 'ivo-totally-different-package@0.0.1',
-        // token: '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'
+        npmVersion: `ivo-totally-different-package@${version}`,
         token: process.argv[2]
     };
 
