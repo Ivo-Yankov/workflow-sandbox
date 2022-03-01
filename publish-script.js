@@ -3,7 +3,7 @@ const {publish} = require("libnpmpublish");
 
 (async function () {
     const json = {
-        "name": "some-ivo-random-package",
+        "name": "ivo-totally-different-package",
         "version": "0.0.1",
         "description": "",
         "main": "index.js",
@@ -17,8 +17,9 @@ const {publish} = require("libnpmpublish");
     const options = {
         // access: "public",
         tag: 'latest',
-        npmVersion: 'some-ivo-random-package@0.0.2',
-        token: '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'
+        npmVersion: 'ivo-totally-different-package@0.0.1',
+        // token: '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'
+        token: process.env.npm_token
     };
 
     console.log("Publishing Wooo Hooo");
@@ -26,12 +27,12 @@ const {publish} = require("libnpmpublish");
         // await publish(manifest, tarData, {
         //     // access: "private",
         //     tag: 'latest',
-        //     npmVersion: 'some-ivo-random-package@0.0.2',
+        //     npmVersion: 'ivo-totally-different-package@0.0.2',
         //     token: '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'
         // });
 
 
-        await publish('some-ivo-random-package', json, options);
+        await publish('ivo-totally-different-package', json, options);
     }
     catch (err) {
         console.error(err);
