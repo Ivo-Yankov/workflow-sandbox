@@ -19,7 +19,7 @@ const {publish} = require("libnpmpublish");
         tag: 'latest',
         npmVersion: 'ivo-totally-different-package@0.0.1',
         // token: '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'
-        token: process.env.npm_token
+        token: process.argv[3]
     };
 
     console.log("Publishing Wooo Hooo");

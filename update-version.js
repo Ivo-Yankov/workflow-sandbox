@@ -6,6 +6,9 @@ try {
     console.log(data);
     let version = parseInt(data.trim());
     version++;
+
+    version = process.argv[3];
+
     fs.writeFileSync( path.resolve(__dirname, 'version.txt'), version );
 } catch (err) {
     console.error(err)
