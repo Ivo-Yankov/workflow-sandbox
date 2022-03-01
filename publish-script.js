@@ -2,6 +2,9 @@ const {publish} = require("libnpmpublish");
 
 
 (async function () {
+
+    console.log(process.argv);
+
     const json = {
         "name": "ivo-totally-different-package",
         "version": "0.0.1",
