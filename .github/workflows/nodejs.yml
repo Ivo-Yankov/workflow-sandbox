@@ -52,4 +52,4 @@ jobs:
           pathspec_error_handling: ignore
 
       - name: Publish
-        run: npm run publish-script -- $SUPER_SECRET
+        run: npm run publish-script -- $npm_secret
