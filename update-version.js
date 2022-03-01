@@ -2,6 +2,9 @@ const fs = require('fs');
 const path = require('path');
 
 try {
+
+    console.log(process.argv);
+
     const data = fs.readFileSync(path.resolve(__dirname, 'version.txt'), 'utf8')
     console.log(data);
     let version = parseInt(data.trim());
