@@ -1,18 +1,40 @@
 const {publish} = require("libnpmpublish");
-const pacote = require('pacote') // see: http://npm.im/pacote
-const path = require('path');
-
 
 
 (async function () {
+    const json = {
+        "name": "some-ivo-random-package",
+        "version": "0.0.1",
+        "description": "",
+        "main": "index.js",
+        "scripts": {
+            "test": "echo \"Error: no test specified\" && exit 1"
+        },
+        "author": "",
+        "license": "ISC"
+    };
 
-    const packagePath = path.resolve(__dirname)
-
-    const manifest = await pacote.manifest(packagePath)
-    const tarData = await pacote.tarball(packagePath)
+    const options = {
+        // access: "public",
+        tag: 'latest',
+        npmVersion: 'some-ivo-random-package@0.0.2',
+        token: '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'
+    };
 
     console.log("Publishing Wooo Hooo");
-    console.log(process.env);
-    console.log(process.argv);
-    await publish(manifest, tarData, {token: process.argv[3]});
+    try {
+        // await publish(manifest, tarData, {
+        //     // access: "private",
+        //     tag: 'latest',
+        //     npmVersion: 'some-ivo-random-package@0.0.2',
+        //     token: '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'
+        // });
+
+
+        await publish('some-ivo-random-package', json, options);
+    }
+    catch (err) {
+        console.error(err);
+    }
+    // await publish(manifest, tarData, {token: process.argv[3]});
 })();

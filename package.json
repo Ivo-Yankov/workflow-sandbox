@@ -19,7 +19,6 @@
   },
   "homepage": "https://github.com/Ivo-Yankov/workflow-test-repo#readme",
   "dependencies": {
-    "libnpmpublish": "^6.0.0",
-    "pacote": "^13.0.3"
+    "libnpmpublish": "3.0.1"
   }
 }
