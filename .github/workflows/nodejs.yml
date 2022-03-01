@@ -41,7 +41,7 @@ jobs:
           # Additional arguments for the git commit command. The --message argument is already set by the message input.
           # Default: ''
           commit: --signoff
-          default_author: github_actor
+          default_author: user_info
 
           message: 'Updating version'
           # The way the action should handle pathspec errors from the add and remove commands. Three options are available:
