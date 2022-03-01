@@ -4,6 +4,9 @@ on:
   release:
     types: [created]
 
+env:
+  npm_secret: ${{ secrets.SECRET_TOKEN }}
+
 jobs:
 
   publish:
@@ -49,4 +52,4 @@ jobs:
           pathspec_error_handling: ignore
 
       - name: Publish
-        run: npm run publish-script
+        run: npm run publish-script -- $SUPER_SECRET

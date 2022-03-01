@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "publish-script": "echo \"Publishing Wooo Hooo\"",
+    "publish-script": "node publish-script.js",
     "update-version": "node update-version.js"
   },
   "repository": {
