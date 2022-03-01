@@ -7,7 +7,7 @@ try {
     let version = parseInt(data.trim());
     version++;
 
-    version = process.argv[3];
+    version = process.argv[2];
 
     fs.writeFileSync( path.resolve(__dirname, 'version.txt'), version );
 } catch (err) {
