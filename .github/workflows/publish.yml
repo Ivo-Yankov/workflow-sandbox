@@ -5,7 +5,7 @@ on:
     types: [created]
 
 env:
-  npm_token: ${{ secrets.NPM_TOKEN }}
+  npm_token: ${{ secrets.NPM_TOKEN_2 }}
 
 jobs:
   build:

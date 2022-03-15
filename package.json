@@ -1,6 +1,6 @@
 {
-  "name": "ivo-workflow-test-repo",
-  "version": "0.0.2",
+  "name": "testing-publish-cicd-ivo",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
