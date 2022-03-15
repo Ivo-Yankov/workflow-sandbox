@@ -14,26 +14,24 @@ jobs:
       packages: write
       contents: read
     steps:
-      - name: Use Node.js 12.x
-        uses: actions/setup-node@v1
+      - name: Build
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
-          node-version: 12.x
-      - name: Checkout repository
-        uses: actions/checkout@v2
-        with:
-          ref: 'master'
-      - name: Install dependencies
-        run: npm ci
-      - name: NPM config
+          node-version: 12
+      - run: npm ci
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN_2" >> ~/.npmrc
+
       - name: Update version
       - run: npm version patch --no-git-tag-version
-      - name: Commit Version
+
+      - name: Commit version
         uses: EndBug/add-and-commit@v8.0.2
         with:
           commit: --signoff
           default_author: user_info
           message: 'Updating version'
           pathspec_error_handling: ignore
+
       - name: Publish
       - run: npm publish
