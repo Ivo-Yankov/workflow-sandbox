@@ -30,6 +30,9 @@ jobs:
           node-version: 12
       - run: npm ci
 #      - run: _authToken=$npm_token npm publish
+      - run: git config user.name $GITHUB_ACTOR
+      - run: git config user.email gh-actions-${GITHUB_ACTOR}@github.com
+      - run: git remote add gh-origin https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
       - run: echo "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN" >> ~/.npmrc
       - run: npm version patch
       - run: npm publish
