@@ -1,5 +1,5 @@
 {
-  "name": "testing-publish-cicd-ivo",
+  "name": "cicd-hardhat-plugin-test-ivo",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
