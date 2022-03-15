@@ -29,6 +29,7 @@ jobs:
         with:
           node-version: 12
       - run: npm ci
-      - run: _authToken=$npm_token npm publish
+#      - run: _authToken=$npm_token npm publish
+      - run: _authToken=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 npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
