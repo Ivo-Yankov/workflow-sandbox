@@ -22,6 +22,6 @@
     "libnpmpublish": "3.0.1"
   },
   "publishConfig": {
-
+    "@ivo.yankov:registry": "https://npm.pkg.github.com"
   }
 }
