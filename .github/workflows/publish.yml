@@ -2,7 +2,7 @@ name: Node.js Package
 
 on:
   release:
-    types: [created]
+    types: [prereleased]
 
 env:
   NPM_TOKEN_2: ${{ secrets.NPM_TOKEN_2 }}
@@ -27,4 +27,4 @@ jobs:
           message: 'Updating version'
           pathspec_error_handling: ignore
       - run: npm publish
-#      - run: GITHUB_TOKEN=$GITHUB_TOKEN  node scripts/create-release.js
+      - run: GITHUB_TOKEN=$GITHUB_TOKEN  node scripts/create-release.js
