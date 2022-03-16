@@ -2,7 +2,7 @@ name: Node.js Package
 
 on:
   release:
-    types: [prereleased]
+    types: [created]
 
 env:
   NPM_TOKEN_2: ${{ secrets.NPM_TOKEN_2 }}
