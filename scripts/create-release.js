@@ -8,7 +8,10 @@ const {getLatestRelease, deleteRelease, createRelease} = require('./helpers');
                 await deleteRelease(latestRelease.id.toString());
             }
 
-            latestRelease.name = "This is the new name";
+            latestRelease.name = latestRelease.name
+                .replace('minor', '')
+                .replace('minor', '')
+                .trim();
 
             await createRelease(latestRelease);
         }

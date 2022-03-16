@@ -27,4 +27,6 @@ jobs:
           message: 'Updating version'
           pathspec_error_handling: ignore
       - run: npm publish
+
+      - name: Create Release
       - run: GITHUB_TOKEN=$GITHUB_TOKEN  node scripts/create-release.js
