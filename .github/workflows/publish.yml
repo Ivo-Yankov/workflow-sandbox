@@ -5,7 +5,7 @@ on:
     types: [prereleased]
 
 env:
-  NPM_TOKEN_2: ${{ secrets.NPM_TOKEN_2 }}
+  NPM_TOKEN_2: ${{ secrets.NPM_TOKEN }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 jobs:
   publish:
@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: 12
       - run: npm ci
-      - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN_2" >> ~/.npmrc
+      - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
       - run: GITHUB_TOKEN=$GITHUB_TOKEN  node scripts/update-version.js
       - uses: EndBug/add-and-commit@v8.0.2
         with:

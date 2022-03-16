@@ -1,5 +1,5 @@
 const axios = require('axios');
-const githubRepo = 'Ivo-Yankov/workflow-test-repo';
+const githubRepo = 'Ivo-Yankov/workflow-sandbox';
 
 const timeout = 5000;
 
