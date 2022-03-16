@@ -20,17 +20,19 @@ async function deleteRelease(releaseId) {
 }
 
 async function createRelease(data) {
-    const {tag_name, target_commitish, name, body, } = data;
-
-    return await axios.post(`https://api.github.com/repos/${githubRepo}/releases/`, {
-        tag_name,
-        target_commitish,
-        name,
-        body,
-        draft: false,
-        prerelease: false
-    }, {
-        timeout,
+    const {tag_name, target_commitish, name, body} = data;
+    return await axios({
+        method: 'post',
+        url: `https://api.github.com/repos/${githubRepo}/releases`,
+        data: {
+            tag_name,
+            target_commitish,
+            name,
+            body,
+            draft: false,
+            prerelease: false
+        },
+        // timeout,
         headers: {'authorization': `Bearer ${process.env.GITHUB_TOKEN}`}
     });
 }
