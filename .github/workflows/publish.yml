@@ -27,13 +27,4 @@ jobs:
           message: 'Updating version'
           pathspec_error_handling: ignore
       - run: npm publish
-  release:
-    runs-on: ubuntu-latest
-    steps:
-        - uses: actions/checkout@v2
-          with:
-            ref: 'master'
-        - uses: actions/setup-node@v2
-          with:
-            node-version: 12
-        - run: GITHUB_TOKEN=$GITHUB_TOKEN  node scripts/create-release.js
+#      - run: GITHUB_TOKEN=$GITHUB_TOKEN  node scripts/create-release.js
