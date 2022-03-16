@@ -6,7 +6,7 @@ on:
 
 env:
   NPM_TOKEN_2: ${{ secrets.NPM_TOKEN_2 }}
-
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -19,7 +19,7 @@ jobs:
           node-version: 12
       - run: npm ci
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN_2" >> ~/.npmrc
-      - run: npm version patch --no-git-tag-version
+      - run: GITHUB_TOKEN=$GITHUB_TOKEN  node scripts/update-version.js
       - uses: EndBug/add-and-commit@v8.0.2
         with:
           commit: --signoff
@@ -27,11 +27,4 @@ jobs:
           message: 'Updating version'
           pathspec_error_handling: ignore
       - run: npm publish
-#      - uses: actions/upload-artifact@v3
-#        with:
-#          path: ${{ github.workspace }}
-      - uses: meeDamian/github-release@2.0
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          files: *
-          allow_override: true
+      - run: GITHUB_TOKEN=$GITHUB_TOKEN  node scripts/create-release.js

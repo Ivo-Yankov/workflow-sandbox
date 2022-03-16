@@ -23,5 +23,9 @@
   },
   "publishConfig": {
     "@ivo.yankov:registry": "https://npm.pkg.github.com"
+  },
+  "devDependencies": {
+    "axios": "^0.26.1",
+    "dotenv": "^16.0.0"
   }
 }
