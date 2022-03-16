@@ -1,6 +1,6 @@
 {
-  "name": "cicd-hardhat-plugin-test-ivo",
-  "version": "1.0.11",
+  "name": "workflow-ivo-sandbox-package",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -15,9 +15,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Ivo-Yankov/workflow-test-repo/issues"
+    "url": "https://github.com/Ivo-Yankov/workflow-sandbox/issues"
   },
-  "homepage": "https://github.com/Ivo-Yankov/workflow-test-repo#readme",
+  "homepage": "https://github.com/Ivo-Yankov/workflow-sandbox#readme",
   "dependencies": {
     "libnpmpublish": "3.0.1"
   },
