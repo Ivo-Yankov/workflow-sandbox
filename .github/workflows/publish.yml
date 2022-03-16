@@ -27,6 +27,11 @@ jobs:
           message: 'Updating version'
           pathspec_error_handling: ignore
       - run: npm publish
-      - uses: actions/upload-artifact@v3
+#      - uses: actions/upload-artifact@v3
+#        with:
+#          path: ${{ github.workspace }}
+      - uses: meeDamian/github-release@2.0
         with:
-          path: ${{ github.workspace }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          files: release/
+          allow_override: true
