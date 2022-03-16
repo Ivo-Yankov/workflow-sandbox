@@ -27,3 +27,8 @@ jobs:
           message: 'Updating version'
           pathspec_error_handling: ignore
       - run: npm publish
+      - name: Upload Release
+      - uses: ncipollo/release-action@v1
+        with:
+          artifacts: "release.zip"
+          token: ${{ secrets.GITHUB_TOKEN }}
