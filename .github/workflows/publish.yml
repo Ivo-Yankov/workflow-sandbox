@@ -11,6 +11,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
+      - name: Prepare env
       - uses: actions/checkout@v2
         with:
           ref: 'master'
@@ -19,6 +20,7 @@ jobs:
           node-version: 12
       - run: npm ci
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN_2" >> ~/.npmrc
+      - name: Update version
       - run: GITHUB_TOKEN=$GITHUB_TOKEN  node scripts/update-version.js
       - uses: EndBug/add-and-commit@v8.0.2
         with:
@@ -26,6 +28,7 @@ jobs:
           default_author: user_info
           message: 'Updating version'
           pathspec_error_handling: ignore
+      - name: Publish to NPM
       - run: npm publish
 
       - name: Create Release
