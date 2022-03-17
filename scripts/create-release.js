@@ -10,7 +10,7 @@ const {getLatestRelease, deleteRelease, createRelease} = require('./helpers');
 
             latestRelease.name = latestRelease.name
                 .replace('minor', '')
-                .replace('minor', '')
+                .replace('major', '')
                 .trim();
 
             await createRelease(latestRelease);
