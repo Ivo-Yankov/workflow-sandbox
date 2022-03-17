@@ -1,7 +1,9 @@
 const {exec} = require('child_process');
 const {getLatestRelease, deleteRelease, createRelease} = require('./helpers');
 
-const sleep = async (ms) => new Promise(resolve => setTimeout(resolve, ms));
+const sleep = async (ms) => {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 (async () => {
     try {
@@ -25,7 +27,7 @@ const sleep = async (ms) => new Promise(resolve => setTimeout(resolve, ms));
                 .replace('major', '')
                 .trim();
 
-            // await sleep(5000);
+            await sleep(5000);
             await createRelease(latestRelease);
 
         }
