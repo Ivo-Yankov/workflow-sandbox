@@ -16,6 +16,8 @@ const {getLatestRelease} = require('./helpers');
         }
 
         try {
+            console.log("===============update version: ======")
+            await exec(`npm whoami`);
             await exec(`npm version ${versionType} --no-git-tag-version`);
         }
         catch(err) {
