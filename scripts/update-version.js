@@ -15,6 +15,11 @@ const {getLatestRelease} = require('./helpers');
             versionType = 'major';
         }
 
-        await exec(`npm version ${versionType} --no-git-tag-version`);
+        try {
+            await exec(`npm version ${versionType} --no-git-tag-version`);
+        }
+        catch(err) {
+            console.error(err);
+        }
     }
 })();
