@@ -1,5 +1,7 @@
 const {getLatestRelease, deleteRelease, createRelease} = require('./helpers');
 
+const sleep = async (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
 (async () => {
     try {
         let latestRelease = await getLatestRelease();
@@ -13,7 +15,9 @@ const {getLatestRelease, deleteRelease, createRelease} = require('./helpers');
                 .replace('major', '')
                 .trim();
 
+            await sleep(5000);
             await createRelease(latestRelease);
+
         }
     }
     catch(err) {
