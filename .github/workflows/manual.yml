@@ -42,12 +42,28 @@ jobs:
       - name: 'Major version'
         if: "contains(github.event.inputs.versionType, 'major')"
         run: npm version major --no-git-tag-version
-      - uses: EndBug/add-and-commit@v8.0.2
+
+#      - uses: EndBug/add-and-commit@v8.0.2
+#        with:
+#          commit: --signoff
+#          default_author: user_info
+#          message: 'Updating version'
+#          pathspec_error_handling: ignore
+
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v4
         with:
-          commit: --signoff
-          default_author: user_info
-          message: 'Updating version'
-          pathspec_error_handling: ignore
+          title: ${{ github.event.inputs.tag }}
+          signoff: true
+          commit-message: Update version to ${{ github.event.inputs.tag }}
+          branch: v${{ github.event.inputs.tag }}
+
+      - uses: peter-evans/enable-pull-request-automerge@v2
+        with:
+          token: ${{ secrets.PAT }}
+          pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
+
       - uses: ncipollo/release-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
